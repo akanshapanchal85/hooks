@@ -1,23 +1,23 @@
 import React from 'react'
+import CommentDetail from './CommentDetail'
 import faker from 'faker'
+import ApprovalCard from './ApprovalCard'
 
-const App = () => {
+const App = (props) => {
+  console.log(props)
   return (
     <div className='ui container comments'>
-      <div className='comment'>
-        <a href='/' className='avatar'>
-          <img src={faker.image.image()} alt='avatar'/>
-        </a>
-        <div className='content'>
-          <a href='/' className='author'>
-          Sam
-          </a> 
-        <div className='metadata'>
-          <span className='data'>Today at 6:00</span>
-        </div>
-        <div className='text'>Nice Blog Post!</div>
-        </div>
-      </div>
+      <ApprovalCard>
+      <CommentDetail author="Akansha" timeAgo="Today at 6:00" img={faker.image.image()} />
+      </ApprovalCard>
+      
+      <ApprovalCard>
+      <CommentDetail author="Simran" timeAgo="Today at 8:00" img={faker.image.image()}/>
+      </ApprovalCard>
+      
+      <ApprovalCard>
+      <CommentDetail author="Shourya" timeAgo="Today at 12:00" img={faker.image.image()}/>
+      </ApprovalCard>
     </div>
   )
 }
